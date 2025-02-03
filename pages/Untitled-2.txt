@@ -1,0 +1,45 @@
+<?php
+ini_set('session.gc_maxlifetime',1);
+session_strat();
+
+$expireAfter=1;
+if($SERVER['REQUER_METHOD']=='POST')
+{
+    $SESSION['user']=$_POST['username'];
+    $_SESSION['Addr']=$_POST['location'];
+    $_SESSION['cn']=$_POST['cn'];
+
+    if(isset($_SESSION["username"]))
+    {
+        if(time()-$_SESSION['logintime']>1)
+        {
+            header("Location:login.php");
+            exit();
+        }
+    }
+
+    else{
+        header("Location:Q2page1.php");
+        exit();
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <from style="align-items:center;" method="post">
+        <label style="text-aglin: center;" for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label style="text-aglin: center;" for="location">Location:</label>
+        <input type="text" id="location" name="location"><br>
+        <label style="text-align: center;" for="cn">Contact Number:</label>
+        <input type="text" id="cn" name="cn"><br>
+        <input type="submit">
+    </form> 
+</body>
+    </html>

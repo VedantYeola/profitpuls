@@ -1,0 +1,26 @@
+<?php
+session_start();
+if($_SERVER['REQUEST_METHOD']=="POST")
+{
+    $_SESSION['user']=$_POST['username'];
+    $_SESSION['password']=$_POST['uspass']
+    $_SESSION['logintime']=time();
+    header("loc:Q2page2.php")
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>page 1</titel>
+    </head>
+    <body>
+        <h3 style="text-aglin:center;">Login Form</h3>
+        <form>
+            <label>UserName</label>
+            <input type="text" value="username" name="username">
+            <label>password</label>
+            <input type="text" value="password" name="password">
+            <input type="submit">
+        </from>
+</html>

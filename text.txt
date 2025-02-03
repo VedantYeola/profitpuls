@@ -42,48 +42,6 @@ def main():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     #     st.text_input(label="Username :",value="",key="user",on_change=creds_entered)
     #     st.text_input(label="Password :",value="",key="password",type="password",on_change=creds_entered)
     #     return False
